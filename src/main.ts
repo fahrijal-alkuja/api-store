@@ -1,8 +1,15 @@
+import { Logger, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-
+const port = 5000;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  app.useGlobalPipes(new ValidationPipe());
+  await app.listen(port, '0.0.0.0');
+  app.enableCors();
+  Logger.log(
+    `Server Runing to port:${port} url: ${await app.getUrl()}`,
+    'Bootstrap',
+  );
 }
 bootstrap();
