@@ -11,9 +11,25 @@ datasource db {
 }
 
 model User {
-  id       Int     @id @default(autoincrement())
-  email    String  @unique
+  id       Int       @id @default(autoincrement())
+  email    String    @unique
   password String
   name     String?
   rules    String?
+  profiles Profile[]
+}
+
+model Profile {
+  id      Int     @id @default(autoincrement())
+  user_id Int
+  user    User?   @relation(fields: [user_id], references: [id])
+  nama    String?
+  email   String?
+  phone   String?
+  address String?
+  city    String?
+  state   String?
+  zip     String?
+  country String?
+  image   String?
 }

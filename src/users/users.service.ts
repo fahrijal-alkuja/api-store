@@ -27,7 +27,11 @@ export class UsersService {
   }
 
   async findAll() {
-    return await this.dbUser.user.findMany()
+    return await this.dbUser.user.findMany({
+      include: {
+        profiles: true
+      }
+    })
   }
 
   async findOne(id: number) {
@@ -38,7 +42,10 @@ export class UsersService {
       throw new NotFoundException('User not found')
     }
     return await this.dbUser.user.findUnique({
-      where: { id }
+      where: { id },
+      include: {
+        profiles: true
+      }
     })
   }
 
