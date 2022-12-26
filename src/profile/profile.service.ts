@@ -20,8 +20,10 @@ export class ProfileService {
   }
 
   async findOne(id: number) {
-    return await this.dbfrofile.profile.findUnique({
-      where: { id }
+    return await this.dbfrofile.profile.findFirst({
+      where: {
+        user_id: id
+      }
     })
   }
 

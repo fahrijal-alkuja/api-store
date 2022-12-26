@@ -7,7 +7,6 @@ export class CreateProfileDto {
     nama: string
     @IsEmail()
     email: string
-    @IsNumber()
     phone: string
     address: string
     city: string
