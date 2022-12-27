@@ -33,3 +33,14 @@ model Profile {
   country String?
   image   String?
 }
+
+model Product {
+  id          Int     @id @default(autoincrement())
+  title       String?
+  price       String?
+  description String
+  category    String?
+  image       String?
+  rate        String?
+  count       String?
+}

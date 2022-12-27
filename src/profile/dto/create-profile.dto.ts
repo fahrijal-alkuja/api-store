@@ -4,14 +4,14 @@ export class CreateProfileDto {
     @IsNotEmpty()
     @IsNumber()
     user_id: number;
-    nama: string
+    nama: string;
     @IsEmail()
-    email: string
-    phone: string
-    address: string
-    city: string
-    state: string
-    zip: string
-    country: string
-    image: string
+    email: string;
+    phone: string;
+    address: string;
+    city: string;
+    state: string;
+    zip: string;
+    country: string;
+    image: string;
 }
