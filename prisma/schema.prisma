@@ -17,6 +17,7 @@ model User {
   name     String?
   rules    String?
   profiles Profile[]
+  Order    Order[]
 }
 
 model Profile {
@@ -43,4 +44,17 @@ model Product {
   image       String?
   rate        String?
   count       String?
+  Order       Order[]
+}
+
+model Order {
+  id         Int      @id @default(autoincrement())
+  user_id    Int
+  user       User?    @relation(fields: [user_id], references: [id])
+  product_id Int
+  product    Product? @relation(fields: [product_id], references: [id])
+  qt         String
+  total      String
+  tanggal    String
+  status     String
 }

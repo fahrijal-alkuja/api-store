@@ -27,11 +27,7 @@ export class UsersService {
   }
 
   async findAll() {
-    return await this.dbUser.user.findMany({
-      include: {
-        profiles: true
-      }
-    })
+    return await this.dbUser.user.findMany()
   }
 
   async findOne(id: number) {
