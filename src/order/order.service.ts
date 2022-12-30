@@ -9,12 +9,10 @@ export class OrderService {
   constructor(private dborder: PrismaService) { }
 
   async create(createOrderDto: CreateOrderDto) {
-
-    return await this.dborder.order.create(
+    return await this.dborder.order.createMany(
       {
-        data: {
-          ...createOrderDto,
-        }
+        data: createOrderDto,
+        skipDuplicates: true
       }
     )
   }
@@ -24,6 +22,7 @@ export class OrderService {
     return await this.dborder.order.findMany({
       include: {
         product: true,
+        profile: true
       }
     })
   }
@@ -33,9 +32,21 @@ export class OrderService {
       where: { id },
       include: {
         product: true,
-        user: true
+        profile: true
       }
 
+    })
+  }
+
+  async findByUser(id: number) {
+    return await this.dborder.order.findMany({
+      where: {
+        user_id: id
+      },
+      include: {
+        product: true,
+        profile: true
+      }
     })
   }
 
