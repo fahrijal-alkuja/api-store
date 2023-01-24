@@ -27,31 +27,41 @@
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
 ## Setup
+
 - prisma
+
 ```bash
-$ npm install prisma --save-dev
+$ pnpm install prisma --save-dev
 $ npx prisma init
 ```
+
 - validator
+
 ```bash
-$ npm i --save class-validator class-transformer
+$ pnpm i --save class-validator class-transformer
 ```
+
 - Encryption and Hashing
+
 ```bash
-$ npm i bcrypt
-$ npm i -D @types/bcrypt
+$ pnpm i bcrypt
+$ pnpm i -D @types/bcrypt
 ```
+
 - Authentication
+
 ```bash
-$ npm install --save @nestjs/passport passport passport-local
-$ npm install --save-dev @types/passport-local
-$ npm install --save @nestjs/jwt passport-jwt
-$ npm install --save-dev @types/passport-jwt
+$ pnpm install --save @nestjs/passport passport passport-local
+$ pnpm install --save-dev @types/passport-local
+$ pnpm install --save @nestjs/jwt passport-jwt
+$ pnpm install --save-dev @types/passport-jwt
 ```
+
 ## Installation
 
 ```bash
 $ npm install
+$ pnpm install
 ```
 
 ## Running the app
@@ -59,12 +69,15 @@ $ npm install
 ```bash
 # development
 $ npm run start
+$ pnpm run start
 
 # watch mode
 $ npm run start:dev
+$ pnpm run start:dev
 
 # production mode
 $ npm run start:prod
+$ pnpm run start:prod
 ```
 
 ## Test
